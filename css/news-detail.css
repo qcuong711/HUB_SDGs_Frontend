@@ -1,0 +1,106 @@
+﻿/* Specific Styles for News Detail */
+        .article-title {
+            font-family: 'Roboto', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #004080;
+            /* HUB Blue */
+            line-height: 1.3;
+            margin-bottom: 20px;
+        }
+
+        .article-meta {
+            font-size: 0.95rem;
+            color: #666;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .article-content {
+            font-family: 'Inter', sans-serif;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #333;
+        }
+
+        .article-content h3 {
+            color: #004080;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .article-content ul,
+        .article-content ol {
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        .article-content li {
+            margin-bottom: 10px;
+        }
+
+        .sidebar-title {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #004080;
+            border-bottom: 3px solid #F2A900;
+            /* HUB Gold */
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+            display: inline-block;
+        }
+
+        .related-news-item {
+            margin-bottom: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .related-news-item:hover {
+            transform: translateX(5px);
+        }
+
+        .related-news-item a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 600;
+            line-height: 1.4;
+            display: block;
+        }
+
+        .related-news-item a:hover {
+            color: #004080;
+        }
+
+        /* Breadcrumb customization */
+        .breadcrumb-item a {
+            color: #004080;
+            text-decoration: none;
+        }
+
+        .breadcrumb-item a:hover {
+            text-decoration: underline;
+        }
+
+        .breadcrumb-item.active {
+            color: #666;
+        }
+
+        /* Top Banner for inner page */
+        .inner-page-banner {
+            background: linear-gradient(135deg, #002a5c 0%, #004080 100%);
+            padding: 80px 0 40px;
+            color: white;
+            margin-bottom: 40px;
+        }
+
+

@@ -1,0 +1,330 @@
+﻿<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Chi tiết tin tức SDG - Đại học Ngân hàng TP.HCM (HUB)">
+    <title>Chi tiết bài viết - HUB Sustainability</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/HUB logo-08.png">
+
+    <!-- Bootstrap 5 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/skin.css">
+    <link rel="stylesheet" href="css/news-detail.css">
+
+    
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="index.html#" style="max-height: 60px;">
+                <!-- Icon: User Specified (08) -->
+                <img src="images/HUB logo-08.png" alt="HUB Logo"
+                    style="height: 50px; width: auto; object-fit: contain; object-position: center; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+
+                <!-- Text: 2 Lines, Full Name, No Abbreviation -->
+                <div class="d-flex flex-column justify-content-center" style="line-height: 1.1;">
+                    <span class="fw-bold text-hub-blue text-uppercase"
+                        style="font-size: 0.9rem; letter-spacing: 0.5px; font-family: 'Roboto', sans-serif;">TRƯỜNG ĐẠI
+                        HỌC NGÂN HÀNG</span>
+                    <span class="fw-bold text-hub-blue text-uppercase"
+                        style="font-size: 0.9rem; letter-spacing: 0.5px; font-family: 'Roboto', sans-serif;">THÀNH PHỐ
+                        HỒ CHÍ MINH</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="index.html#mission" data-i18n="nav_sus">HUB
+                            Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#sdg-goals" data-i18n="nav_sdgs">17 SDGs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#news" data-i18n="nav_news">Tin tức</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#impact-dashboard" data-i18n="nav_projects">Dự án</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#" data-i18n="nav_report">Sustainability Report</a>
+                    </li>
+                    <!-- Refined Search -->
+                    <li class="nav-item ms-lg-3">
+                        <div class="search-box-elegant">
+                            <input type="text" class="search-input" placeholder="Search..."
+                                data-i18n="nav_search_placeholder">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </li>
+                    <!-- Language Switcher -->
+                    <li class="nav-item ms-3 d-flex align-items-center">
+                        <span id="lang-btn-vi" class="text-hub-gold cursor-pointer me-2" style="cursor: pointer;"
+                            onclick="setLang('vi')">VI</span>
+                        <span class="text-white-50">|</span>
+                        <span id="lang-btn-en" class="text-hub-gold cursor-pointer ms-2"
+                            style="cursor: pointer; opacity: 0.6;" onclick="setLang('en')">EN</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div style="margin-top: 80px;"></div> <!-- Spacer -->
+
+    <!-- Breadcrumb Area -->
+    <div class="bg-light py-3 border-bottom mb-4">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item"><a href="index.html"><i class="fas fa-home me-1"></i>Trang chủ</a></li>
+                    <li class="breadcrumb-item"><a href="index.html#news">Tin tức - Sự kiện</a></li>
+                    <li class="breadcrumb-item"><a href="#">Nghiên cứu khoa học</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Chi tiết bài viết</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="container mb-5 pb-5">
+        <div class="row">
+            <!-- Left Column: Article -->
+            <div class="col-lg-8 pe-lg-5 mb-5 mb-lg-0">
+                <h1 class="article-title">[Contribution Research] Tác động của AI trong quản lý rủi ro tín dụng xanh tại
+                    các NHTM Việt Nam</h1>
+
+                <div class="article-meta d-flex flex-wrap align-items-center gap-3">
+                    <span class="text-muted"><i class="far fa-calendar-alt me-2"></i>02/02/2026</span>
+                    <span class="text-muted"><i class="far fa-folder-open me-2"></i>Nghiên cứu khoa học</span>
+                    <span class="text-muted"><i class="far fa-eye me-2"></i>1,245 Lượt xem</span>
+
+                    <div class="ms-auto d-flex gap-2">
+                        <span class="badge bg-light text-dark border"><i
+                                class="fas fa-tag me-1 text-warning"></i>#GreenCredit</span>
+                        <span class="badge bg-light text-dark border"
+                            style="border-bottom: 2px solid #8F1838 !important;">SDG 8</span>
+                        <span class="badge bg-light text-dark border"
+                            style="border-bottom: 2px solid #FD6925 !important;">SDG 9</span>
+                    </div>
+                </div>
+
+                <div class="article-content">
+                    <p class="lead fw-bold mb-4" style="color: #444;">
+                        Đại học Ngân hàng Thành phố Hồ Chí Minh (HUB) vừa công bố kết quả nghiên cứu mới nhất về việc
+                        ứng dụng Trí tuệ Nhân tạo (AI) nhằm nâng cao hiệu quả quản lý rủi ro tín dụng xanh, góp phần
+                        thúc đẩy sự phát triển bền vững của hệ thống ngân hàng thương mại tại Việt Nam.
+                    </p>
+
+                    <img src="images/campus/493711419_1079927494165887_4040475326295401039_n.jpg"
+                        alt="Hội thảo khoa học về Tín dụng xanh tại HUB" class="w-100">
+                    <p class="text-center text-muted small fst-italic mb-4">Các chuyên gia báo cáo kết quả nghiên cứu
+                        tại Hội thảo GCSF 2026. (Ảnh: HUB)</p>
+
+                    <h3>1. Tầm quan trọng của Tín dụng xanh </h3>
+                    <p>
+                        Tín dụng xanh đang trở thành xu hướng tất yếu trong hoạt động tài chính ngân hàng toàn cầu cũng
+                        như định hướng phát triển của Việt Nam nhằm đạt mục tiêu Net Zero vào năm 2050. Tuy nhiên, việc
+                        đánh giá, phân loại và quản trị rủi ro đối với các dự án xanh (năng lượng tái tạo, nông nghiệp
+                        sạch, xử lý chất thải...) luôn đặt ra những thách thức lớn đối với quy trình thẩm định truyền
+                        thống của các ngân hàng.
+                    </p>
+                    <p>
+                        Theo PGS.TS Nguyễn Thị A, Trưởng nhóm nghiên cứu HUB: <em>"Các dự án xanh mang những đặc thù
+                            riêng về rủi ro môi trường, xã hội học và biến động công nghệ. Việc chỉ sử dụng mô hình xếp
+                            hạng tín dụng cũ không đủ để nắm bắt hết các biến số phức tạp này."</em>
+                    </p>
+
+                    <h3>2. Mô hình AI đề xuất bởi HUB</h3>
+                    <p>Mô hình do nhóm chuyên gia HUB đề xuất tập trung vào 3 yếu tố giá trị tạo lập:</p>
+                    <ul>
+                        <li><strong>Dữ liệu phi cấu trúc (Unstructured Data):</strong> Thu thập và xử lý bằng NLP (Xử lý
+                            ngôn ngữ tự nhiên) các báo cáo phát triển bền vững, dữ liệu báo chí, và thông tin tuân thủ
+                            ESG của doanh nghiệp.</li>
+                        <li><strong>Machine Learning trong dự báo vỡ nợ:</strong> Ứng dụng các thuật toán như Random
+                            Forest, XGBoost để phát hiện sớm các rủi ro dài hạn liên quan đến biến đổi khí hậu (Climate
+                            Risks).</li>
+                        <li><strong>Stress Testing Xanh:</strong> Xây dựng kịch bản kiểm tra sức chịu đựng của danh mục
+                            tín dụng theo các rủi ro chuyển đổi (Transition Risks) khi Nhà nước siết chặt thuế carbon.
+                        </li>
+                    </ul>
+
+                    <div class="p-4 my-4 rounded" style="background-color: #f8f9fa; border-left: 4px solid #004080;">
+                        <h5 class="fw-bold" style="color:#004080;">Đóng góp vào Mục tiêu Phát triển Bền vững (SDGs):
+                        </h5>
+                        <p class="mb-0">
+                            Nghiên cứu này trực tiếp giải quyết <strong>SDG 8</strong> (Tăng trưởng kinh tế và Việc làm
+                            bền vững - qua việc khơi thông dòng vốn), <strong>SDG 9</strong> (Công nghiệp, Sáng tạo & Hạ
+                            tầng) và <strong>SDG 13</strong> (Hành động về Khí hậu). Khẳng định vị thế của HUB không chỉ
+                            là cơ sở đào tạo, mà còn là trung tâm nghiên cứu giải pháp phục vụ cộng đồng và mục tiêu
+                            quốc gia.
+                        </p>
+                    </div>
+
+                    <h3>3. Hướng nghiên cứu tiếp theo</h3>
+                    <p>
+                        Kết quả nghiên cứu được xuất bản trên Tạp chí Khoa học Tài chính uy tín và sẽ được chuyển giao
+                        ứng dụng thử nghiệm tại 2 Ngân hàng TMCP lớn trong quý III/2026. Nhóm nghiên cứu HUB cũng đang
+                        mở rộng mô hình để tích hợp thêm chuẩn mực đánh giá rủi ro Đa dạng sinh học (Biodiversity
+                        Risks).
+                    </p>
+
+                    <p class="text-end fw-bold mt-5">Nguồn tài liệu: Viện Nghiên cứu Đổi mới Sáng tạo HUB</p>
+                </div>
+
+                <!-- Social Share -->
+                <div class="d-flex align-items-center mt-5 pt-4 border-top">
+                    <strong class="me-3">Chia sẻ:</strong>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle me-2"
+                        style="width: 35px; height: 35px; line-height: 1.5;"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="btn btn-outline-info btn-sm rounded-circle me-2"
+                        style="width: 35px; height: 35px; line-height: 1.5;"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="btn btn-outline-primary btn-sm rounded-circle"
+                        style="width: 35px; height: 35px; line-height: 1.5;"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+
+            <!-- Right Column: Sidebar -->
+            <div class="col-lg-4">
+
+                <!-- SDG Integration Box -->
+                <div class="card border-0 bg-light rounded-4 p-4 mb-4 shadow-sm">
+                    <h5 class="fw-bold mb-3" style="color: #004080;">Tính Bền vững của Bài viết</h5>
+
+                    <div class="d-flex align-items-center mb-3 p-2 bg-white rounded shadow-sm border-start border-4"
+                        style="border-color: #8F1838 !important;">
+                        <img src="images/sdg-8.png" alt="SDG 8" style="width: 50px; height: 50px;" class="me-3">
+                        <div>
+                            <span class="d-block fw-bold text-dark small">Mục tiêu 8</span>
+                            <span class="small text-muted">Công việc Tốt & Tăng trưởng TT</span>
+                        </div>
+                    </div>
+
+                    <div class="d-flex align-items-center p-2 bg-white rounded shadow-sm border-start border-4"
+                        style="border-color: #FD6925 !important;">
+                        <img src="images/sdg-9.png" alt="SDG 9" style="width: 50px; height: 50px;" class="me-3">
+                        <div>
+                            <span class="d-block fw-bold text-dark small">Mục tiêu 9</span>
+                            <span class="small text-muted">Công nghiệp, Sáng tạo & Hạ tầng</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Latest News List -->
+                <h4 class="sidebar-title mt-2">Tin tức nổi bật khác</h4>
+
+                <div class="related-news-item">
+                    <div class="text-muted small mb-1"><i class="far fa-calendar-alt me-1"></i> 26/01/2026</div>
+                    <a href="#">HUB tổ chức chuỗi hoạt động nâng cao nhận thức sinh viên về Kinh tế tuần hoàn (Circular
+                        Economy)</a>
+                    <span class="badge bg-success mt-2">Đào tạo</span>
+                </div>
+                <hr class="text-muted opacity-25">
+
+                <div class="related-news-item">
+                    <div class="text-muted small mb-1"><i class="far fa-calendar-alt me-1"></i> 22/01/2026</div>
+                    <a href="#">Lễ ra quân chiến dịch thanh niên tình nguyện "Mùa hè xanh bảo vệ môi trường" 2026</a>
+                    <span class="badge bg-danger mt-2">Cộng đồng</span>
+                </div>
+                <hr class="text-muted opacity-25">
+
+                <div class="related-news-item">
+                    <div class="text-muted small mb-1"><i class="far fa-calendar-alt me-1"></i> 15/01/2026</div>
+                    <a href="#">Hội thảo Quốc tế mở rộng về Tín dụng xanh và Phát triển bền vững (GCSF 2026) tại HUB</a>
+                    <span class="badge bg-primary mt-2">Hợp tác Quốc tế</span>
+                </div>
+
+                <!-- Registration Banner Mini -->
+                <div class="card mt-5 border-0 text-white rounded-4 overflow-hidden shadow">
+                    <img src="images/campus/489426422_1066708995487737_6772890005135643222_n.jpg" class="card-img h-100"
+                        style="object-fit: cover; filter: brightness(0.4);" alt="...">
+                    <div class="card-img-overlay d-flex flex-column justify-content-center text-center p-4">
+                        <h5 class="card-title fw-bold">TRỞ THÀNH CÔNG DÂN TOÀN CẦU?</h5>
+                        <p class="card-text small mb-4">Tham gia các chương trình đào tạo Bền vững tại HUB ngay hôm nay.
+                        </p>
+                        <a href="#" class="btn btn-warning rounded-pill fw-bold"
+                            style="background-color: #F2A900; border-color: #F2A900;">Tìm hiểu thêm</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row">
+                <!-- Brand & Official Info -->
+                <div class="col-lg-4 mb-0" style="margin-left: -15px;">
+                    <img src="images/HUB logo-08.png" alt="HUB Logo" class="footer-logo-white">
+                    <h5 class="mb-3">TRƯỜNG ĐẠI HỌC NGÂN HÀNG<br>THÀNH PHỐ HỒ CHÍ MINH</h5>
+                    <div class="" style="margin-left: 60px; margin-top: -20px;">
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i> Trụ sở
+                                    chính:</strong> 36 Tôn Thất Đạm, Q.1, TP.HCM</small></p>
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i> Hàm
+                                    Nghi:</strong> 39 Hàm Nghi, Q.1, TP.HCM</small></p>
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i> Hoàng
+                                    Diệu:</strong> 56 Hoàng Diệu 2, TP. Thủ Đức</small></p>
+                        <p class="mb-1 mt-2"><small><i class="fas fa-phone me-1 text-white-50"></i> (028) 38 291 901
+                                &nbsp;|&nbsp; <i class="fas fa-envelope me-1 text-white-50"></i>
+                                dhnhtphcm@hub.edu.vn</small></p>
+                    </div>
+                </div>
+
+                <!-- Learners -->
+                <div class="col-lg-2 col-md-6 mb-0">
+                    <h5>NGƯỜI HỌC</h5>
+                    <a href="https://online.hub.edu.vn/">Cổng đào tạo</a>
+                    <a href="#">E-Student</a>
+                    <a href="#">Học trực tuyến</a>
+                    <a href="#">Thư viện số</a>
+                </div>
+
+                <!-- Staff & Alumni -->
+                <div class="col-lg-3 col-md-6 mb-0">
+                    <h5>CBNV & CỰU SV</h5>
+                    <a href="#">Hệ thống EOffice</a>
+                    <a href="#">Hệ thống HRM</a>
+                    <a href="#">HUB Alumni</a>
+                    <a href="#">Tuyển dụng</a>
+                </div>
+
+                <!-- Connect -->
+                <div class="col-lg-3 col-md-6 mb-0">
+                    <h5>KẾT NỐI</h5>
+                    <div class="social-icons mb-1">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <h5 class="footer-link-raise-desktop">LIÊN KẾT NGOÀI</h5>
+                    <a href="#">Bộ Giáo dục & Đào tạo</a>
+                    <a href="#">Ngân hàng Nhà nước</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-modern">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-0">Designed by ©vanhtc@hub.edu.vn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+
+
+
+
+
+

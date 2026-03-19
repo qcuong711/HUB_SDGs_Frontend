@@ -1,0 +1,1818 @@
+﻿<!DOCTYPE html>
+
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="description" content="Trang web Demo SDG cho Đại học Ngân hàng TP.HCM (HUB)">
+    <title>HUB - Sustainable Development Goals</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/HUB logo-08.png">
+
+    <!-- Bootstrap 5 CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha384-iw3OoTErCYJJB9mCa8LNS2hbsQ7M3C0EpIsO/H5+EGAkPGc6rk+V8i04oW/K5xq0" crossorigin="anonymous">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Open+Sans:wght@400;600&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/skin.css">
+    <link rel="stylesheet" href="css/index.css">
+    
+    <!-- Core Dependencies (CDNs) -->
+    <script src="https://cdn.jsdelivr.net/npm/echarts@5.4.3/dist/echarts.min.js" integrity="sha384-BQKzmHvQLMCAnL3UtDBA1Al5tFjsCz1wrMlIUA1wkzo14DYkRWjywW+p9pCj0cwd" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+    <!-- Language Support -->
+    <script src="js/lang.js"></script>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#" style="max-height: 60px;">
+                <!-- Icon: User Specified (08) -->
+                <img src="images/HUB logo-08.png" alt="HUB Logo"
+                    style="height: 50px; width: auto; object-fit: contain; object-position: center; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.1));">
+
+                <!-- Text: 2 Lines, Full Name, No Abbreviation -->
+                <div class="d-flex flex-column justify-content-center" style="line-height: 1.1;">
+                    <span class="fw-bold text-hub-blue text-uppercase"
+                        style="font-size: 0.9rem; letter-spacing: 0.5px; font-family: 'Roboto', sans-serif;">TRƯỜNG ĐẠI
+                        HỌC NGÂN HÀNG</span>
+                    <span class="fw-bold text-hub-blue text-uppercase"
+                        style="font-size: 0.9rem; letter-spacing: 0.5px; font-family: 'Roboto', sans-serif;">THÀNH PHỐ
+                        HỒ CHÍ MINH</span>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link active" href="#mission" data-i18n="nav_sus">HUB
+                            Sustainability</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#sdg-goals" data-i18n="nav_sdgs">17 SDGs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news" data-i18n="nav_news">Tin tức</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#impact-dashboard" data-i18n="nav_projects">Dự án</a>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" href="files/Sustainability_Report.pdf" target="_blank"
+                            data-i18n="nav_report">Sustainability Report</a>
+                    </li>
+                    <!-- Refined Search -->
+                    <li class="nav-item ms-lg-3">
+                        <div class="search-box-elegant">
+                            <input type="text" class="search-input" placeholder="Search..."
+                                data-i18n="nav_search_placeholder">
+                            <button class="search-btn"><i class="fas fa-search"></i></button>
+                        </div>
+                    </li>
+                    <!-- Language Switcher -->
+                    <li class="nav-item ms-3 d-flex align-items-center">
+                        <span id="lang-btn-vi" class="text-hub-gold cursor-pointer me-2" style="cursor: pointer;"
+                            onclick="setLang('vi')">VI</span>
+                        <span class="text-white-50">|</span>
+                        <span id="lang-btn-en" class="text-hub-gold cursor-pointer ms-2"
+                            style="cursor: pointer;" onclick="setLang('en')">EN</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-section" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container h-100">
+            <div class="row h-100 align-items-center">
+                <!-- Left: Text Content -->
+                <div class="col-lg-7 hero-content hero-content-left">
+                    <div class="animate-in">
+                        <h1 class="hero-title-ueh">
+                            HUB <br>
+                            <span class="text-hub-gold">SUSTAINABILITY</span>
+                        </h1>
+                        <p class="hero-subtitle-ueh mb-4" data-i18n="hero_subtitle">
+                            Vì một tương lai bền vững.
+                        </p>
+                        <div class="d-flex gap-3 animate-in" style="animation-delay: 0.1s;">
+                            <button type="button" class="btn btn-hub-white" data-bs-toggle="modal"
+                                data-bs-target="#aboutHubModal" data-i18n="hero_btn_about">VỀ HUB +</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Floating News Card (UEH Style) -->
+                <div class="col-lg-5 hero-content d-flex justify-content-end">
+                    <div class="news-card-ueh animate-in" style="animation-delay: 0.2s;">
+                        <div
+                            class="d-flex align-items-center justify-content-between mb-4 border-bottom border-light pb-2">
+                            <h3 class="text-uppercase fw-bold mb-0 text-white" data-i18n="hero_news_title">Tin tức
+                                nổi bật</h3>
+                            <span class="badge bg-white text-hub-blue rounded-0 px-2 py-1"
+                                data-i18n="hero_news_badge">Mới</span>
+                        </div>
+
+                        <div class="news-item mb-4">
+                            <div class="text-white-50 small mb-1">29/01/2026</div>
+                            <a href="#" class="news-link d-block text-white fw-bold text-decoration-none"
+                                data-i18n="hero_news_item">
+                                MÔN HỌC TÀI CHÍNH XANH VÀ PHÁT TRIỂN BỀN VỮNG
+                            </a>
+                        </div>
+
+                        <a href="#" class="btn-link-ueh">
+                            <span data-i18n="hero_news_more">Xem thêm</span> <i class="fas fa-arrow-right ms-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mission & Strategic Model Section -->
+    <section id="mission" class="about-section py-5" style="background-color: #fff;">
+        <div class="container">
+            <div class="row align-items-center">
+                <!-- Left: Text (Updated Content & Visuals) -->
+                <div class="col-lg-6 pe-lg-5">
+
+                    <h2 class="text-hub-blue fw-bold mb-4 display-6 text-uppercase" data-i18n="mission_title">CHIẾN LƯỢC
+                        HUB BỀN VỮNG</h2>
+                    <p class="lead text-secondary mb-4" data-i18n="mission_lead">
+                        Kiến tạo hệ sinh thái Tài chính Xanh và Quản trị Số, lấy người học làm
+                        trung tâm để đào tạo thế
+                        hệ "Công dân toàn cầu" có tư duy bền vững.
+                    </p>
+
+                    <ul class="list-unstyled d-flex flex-column gap-3 mb-4">
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-hub-gold mt-1 me-3 fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-hub-blue" data-i18n="mission_pillar_gov">Smart Governance:</span>
+                                <span data-i18n="pillar_gov_desc">Quản trị đại học minh bạch
+                                    & số hóa.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-hub-gold mt-1 me-3 fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-hub-blue" data-i18n="mission_pillar_edu">Green Finance
+                                    Education:</span> <span data-i18n="pillar_edu_desc">Tiên phong đào tạo
+                                    Tài chính - Ngân hàng xanh.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-hub-gold mt-1 me-3 fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-hub-blue" data-i18n="mission_pillar_res">Impact Research:</span>
+                                <span data-i18n="pillar_res_desc">Nghiên cứu liên ngành & giải
+                                    quyết vấn đề xã hội.</span>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-hub-gold mt-1 me-3 fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-hub-blue" data-i18n="mission_pillar_cam">Eco-Smart Campus:</span>
+                                <span data-i18n="pillar_cam_desc">Không gian học tập Xanh &
+                                    Thông minh (11ha).</span>
+                            </div>
+                        </li>
+                        <li class="d-flex align-items-start">
+                            <i class="fas fa-check-circle text-hub-gold mt-1 me-3 fs-5"></i>
+                            <div>
+                                <span class="fw-bold text-hub-blue" data-i18n="mission_pillar_com">Community
+                                    Service:</span>
+                                <span data-i18n="pillar_com_desc">Phụng sự cộng đồng & Tài
+                                    chính toàn diện.</span>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <button type="button" class="btn btn-hub-primary btn-lg shadow-sm" data-bs-toggle="modal"
+                        data-bs-target="#strategyDetailModal">
+                        <span data-i18n="mission_btn">Xem chi tiết</span> <i class="fas fa-arrow-right ms-2"></i>
+                    </button>
+                </div>
+                <!-- Right: Circular Visualization -->
+                <div class="col-lg-6">
+                    
+                    <div class="rich-pdca-wrapper my-4" style="transform: scale(0.8); transform-origin: top center;">
+                        <!-- The spinning image background perfectly clipped to a circle to eliminate gray square borders -->
+                        <div class="rich-pdca-wheel shadow-inner">
+                            <img src="images/ceccc18f-5134-4e4d-b238-889cfaf3a46d.png" alt="PDCA Strategy Wheel">
+                        </div>
+
+                        <!-- The static beautiful center core covering the center of the image -->
+                        <div class="rich-pdca-center">
+                            <!-- HUB Logo -->
+                            <img src="images/SDG-Demo/HUB logo-01.png" alt="HUB Logo Core"
+                                style="max-width: 170px; max-height: 110px; margin-top: -20px; margin-bottom: 5px; object-fit: contain; mix-blend-mode: multiply;">
+
+                            <!-- Green SUSTAINABLE text -->
+                            <div
+                                style="color: #007D48; font-weight: 800; font-size: 18px; letter-spacing: 1px; margin-top: -5px; text-transform: uppercase;">
+                                SUSTAINABLE
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- 17 SDGs Grid -->
+    <section id="sdg-goals" class="py-5">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column (1/3): Title & Description -->
+                <div class="col-lg-4 mb-4 mb-lg-0 d-flex flex-column justify-content-center">
+                    <h2 class="sdg-program-title text-white py-3 px-4 mb-4 d-inline-block"
+                        style="background-color: #A71B28; font-weight: bold; text-transform: uppercase; font-size: 1.5rem; line-height: 1.4;"
+                        data-i18n="sdg_title">
+                        CHƯƠNG TRÌNH PHÁT TRIỂN BỀN VỮNG (SDGs) TẠI HUB
+                    </h2>
+                    <div class="sdg-description text-dark" style="text-align: justify;">
+                        <p class="mb-3" data-i18n="sdg_desc_1">
+                            17 Mục tiêu Phát triển Bền vững (SDGs) theo Chương trình Nghị sự
+                            2030 của Liên hợp quốc là
+                            kim chỉ nam toàn cầu nhằm xóa nghèo, bảo vệ hành tinh và kiến tạo sự
+                            thịnh vượng. Tại Đại
+                            học Ngân hàng TP.HCM (HUB), tinh thần bền vững đã được nuôi dưỡng và
+                            lồng ghép xuyên suốt
+                            hành trình hơn 45 năm hình thành và phát triển.
+                        </p>
+                        <p class="mb-4" data-i18n="sdg_desc_2">
+                            Tiếp nối truyền thống đó, HUB xác định chiến lược trở thành Đại học
+                            Đa ngành và Liên ngành,
+                            trong đó "Chuyển đổi số và Phát triển bền vững" là trọng tâm cốt
+                            lõi. Chúng tôi cam kết cụ
+                            thể hóa các mục tiêu SDGs thông qua hoạt động đào tạo nguồn nhân lực
+                            chất lượng cao, nghiên
+                            cứu khoa học phụ trách xã hội và vận hành bộ máy quản trị chuẩn mực.
+                        </p>
+                        <a href="#" class="text-hub-blue fw-bold text-decoration-none" data-i18n="sdg_link">
+                            Khám phá các hành động thực tiễn của HUB theo từng mục tiêu SDG tại
+                            đây &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right Column (2/3): 17 SDGs Grid -->
+                <!-- Javascript will populate this with 6 columns -->
+                <div class="col-lg-8">
+                    <div class="row g-2 justify-content-center" id="sdg-grid">
+                        <!-- Content by JS -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- Impact Dashboard Section -->
+    <section id="impact-dashboard" class="dashboard-section">
+        <div class="container">
+            <h2 class="text-center dashboard-title animate-in" data-i18n="dash_title">BẢNG ĐIỀU KHIỂN TÁC ĐỘNG</h2>
+
+            <!-- Master Metrics -->
+            <div class="row mb-5">
+                <div class="col-md-3 col-6">
+                    <div class="dash-metric-card animate-in" style="animation-delay: 0.1s;">
+                        <div class="dash-metric-icon"><i class="fas fa-trophy"></i></div>
+                        <div class="dash-metric-info">
+                            <h3>600+</h3>
+                            <p data-i18n="dash_metric_rank">Xếp hạng (THE)</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="dash-metric-card animate-in" style="animation-delay: 0.2s;">
+                        <div class="dash-metric-icon"><i class="fas fa-user-graduate"></i></div>
+                        <div class="dash-metric-info">
+                            <h3>15000</h3>
+                            <p data-i18n="dash_metric_citizens">Công dân toàn cầu</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="dash-metric-card animate-in" style="animation-delay: 0.3s;">
+                        <div class="dash-metric-icon"><i class="fas fa-leaf"></i></div>
+                        <div class="dash-metric-info">
+                            <h3>100%</h3>
+                            <p data-i18n="dash_metric_campus">Eco-Smart Campus</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="dash-metric-card animate-in" style="animation-delay: 0.4s;">
+                        <div class="dash-metric-icon"><i class="fas fa-hand-holding-heart"></i></div>
+                        <div class="dash-metric-info">
+                            <h3>50+</h3>
+                            <p data-i18n="dash_metric_projects">Dự án cộng đồng</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SDG Filter -->
+            <div class="row mb-4 animate-in">
+                <div class="col-12">
+                    <div class="d-flex align-items-center mb-2">
+                        <h5 class="mb-0 me-3 text-hub-blue fw-bold text-nowrap" data-i18n="dash_filter_label">Lọc theo
+                            Mục tiêu:</h5>
+                        <div id="sdg-filter" class="sdg-filter-container flex-grow-1">
+                            <!-- Populated by JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4 Pillars Grid -->
+            <div class="row g-4">
+                <!-- Pillar 1: Research -->
+                <div class="col-lg-6">
+                    <div class="dash-card border-research animate-in">
+                        <div class="dash-card-header">
+                            <h4 class="dash-card-title" data-i18n="dash_p1_title">NGHIÊN CỨU (RESEARCH)</h4>
+                            <i class="fas fa-microscope dash-card-icon"></i>
+                        </div>
+                        <h6 class="text-secondary small mb-3" data-i18n="dash_p1_chart">Công bố Khoa học</h6>
+                        <div id="chart-research" class="dash-chart-container"></div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2: Teaching -->
+                <div class="col-lg-6">
+                    <div class="dash-card border-teaching animate-in" style="animation-delay: 0.1s;">
+                        <div class="dash-card-header">
+                            <h4 class="dash-card-title" data-i18n="dash_p2_title">GIẢNG DẠY (TEACHING)</h4>
+                            <i class="fas fa-graduation-cap dash-card-icon"></i>
+                        </div>
+                        <h6 class="text-secondary small mb-3" data-i18n="dash_p2_chart">Tỷ lệ Môn học & Sinh viên</h6>
+                        <div id="chart-teaching" class="dash-chart-container"></div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3: Stewardship -->
+                <div class="col-lg-6">
+                    <div class="dash-card border-steward animate-in" style="animation-delay: 0.2s;">
+                        <div class="dash-card-header">
+                            <h4 class="dash-card-title" data-i18n="dash_p3_title">QUẢN TRỊ (STEWARDSHIP)</h4>
+                            <i class="fas fa-building dash-card-icon"></i>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6 class="text-secondary small mb-3" data-i18n="dash_p3_chart">Tiêu thụ năng lượng</h6>
+                                <div id="chart-stewardship" style="height: 200px; width: 100%;"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <h6 class="text-secondary small mb-3" data-i18n="dash_p3_prog">Tiến độ Chính sách</h6>
+                                <div id="steward-progress-container">
+                                    <!-- Injected JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 4: Outreach -->
+                <div class="col-lg-6">
+                    <div class="dash-card border-outreach animate-in" style="animation-delay: 0.3s;">
+                        <div class="dash-card-header">
+                            <h4 class="dash-card-title" data-i18n="dash_p4_title">CỘNG ĐỒNG (OUTREACH)</h4>
+                            <i class="fas fa-hands-helping dash-card-icon"></i>
+                        </div>
+                        <h6 class="text-secondary small mb-3" data-i18n="dash_p4_map">Bản đồ Tác động Xã hội</h6>
+                        <div id="chart-outreach" class="dash-chart-container"></div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Tin Tức Section -->
+    <section id="news" class="news-section pb-5" style="background-color: #fafafa;">
+        <div class="container pt-5">
+            <!-- Tiêu đề -->
+            <div class="text-center mb-5">
+                <h2 class="text-uppercase fw-bold text-hub-blue" style="letter-spacing: 1px;" data-i18n="nav_news">Tin Tức</h2>
+                <div style="width: 80px; height: 3px; background-color: #F2A900; margin: 15px auto 0;"></div>
+            </div>
+
+            <!-- Filters -->
+            
+            
+
+            <!-- Filters Area -->
+            <div class="row mb-5 justify-content-center">
+                <div class="col-lg-10">
+
+                    <!-- Tag Cloud -->
+                    <div class="d-flex flex-wrap justify-content-center gap-2 mb-4">
+                        <button class="tag-cloud-btn filter-btn active" data-tag-sdg="all" data-i18n="filter_all">TẤT CẢ</button>
+                        <button class="tag-cloud-btn filter-btn" data-tag-sdg="4"><span data-i18n="filter_edu">Đào tạo</span> (SDG 4)</button>
+                        <button class="tag-cloud-btn filter-btn" data-tag-sdg="8"><span data-i18n="filter_res">Nghiên cứu & Tăng trưởng</span> (SDG 8)</button>
+                        <button class="tag-cloud-btn filter-btn" data-tag-sdg="16"><span data-i18n="filter_gov">Thể chế hoạt động</span> (SDG 16)</button>
+                        <button class="tag-cloud-btn filter-btn" data-tag-sdg="17"><span data-i18n="filter_partners">Đối tác</span> (SDG 17)</button>
+                    </div>
+
+                    <!-- Timeline Horizontal Filter -->
+                    <div class="news-timeline-container mb-4">
+                        <div class="news-timeline-line"></div>
+                        <div class="news-timeline-steps">
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2020)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2020</div>
+                            </div>
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2021)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2021</div>
+                            </div>
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2022)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2022</div>
+                            </div>
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2023)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2023</div>
+                            </div>
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2024)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2024</div>
+                            </div>
+                            <div class="news-timeline-step" onclick="updateNewsTimeline(this, 2025)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2025</div>
+                            </div>
+                            <div class="news-timeline-step active" onclick="updateNewsTimeline(this, 2026)">
+                                <div class="news-timeline-dot"></div>
+                                <div class="news-timeline-year">2026</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+
+                    <!-- SDG Interactive Map Filter removed as requested -->
+                </div>
+            </div>
+
+            <!-- News Grid (Masonry Layout) -->
+            <div class="row g-4 mb-4" id="news-grid">
+
+                <!-- News Item 1 (SDG 4) -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="4" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20250716154746-1010517367436_781551094195040_7585641342687119877_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 4 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080;">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1"></i>12/02/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #C5192D; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_education">#Đào tạo chất lượng</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem;">
+                                <div>
+                                    <span class="me-3"><i class="far fa-clock me-1 text-warning"></i>5 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1 text-info"></i>2.4k <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white" style="background-color: #C5192D;">SDG 4</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_title_edu">
+                                Đổi mới chương trình đào tạo tại HUB: Tích hợp chuẩn mực ESG và Tài chính xanh vào giảng
+                                dạy khối kinh tế</h5>
+                            <p class="card-text text-muted small mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_text_edu">
+                                Đáp ứng mục tiêu SDG 4, HUB tiên phong cập nhật giáo trình với trọng tâm định hướng sinh
+                                viên trở thành nguồn nhân lực chất lượng cao trong lĩnh vực kinh tế xanh và tài chính
+                                bền vững.</p>
+                            <div
+                                class="mt-auto pt-3 border-top border-light d-flex justify-content-between align-items-center text-muted">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"><img
+                                        src="images/sdg-4.png" width="35" height="35" class="me-2 rounded shadow-sm">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark" data-i18n="sdg_4_title">Giáo dục chất
+                                        lượng</span></span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 2 (SDG 8) -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="8" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20240805091642-1010san-da-bong.jpg" class="w-100 h-100"
+                                style="object-fit: cover; transition: transform 0.5s;" alt="SDG 8 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    08/02/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #A21942; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_res">#Tăng trưởng Kinh tế</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> 3 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 1.2k <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #A21942; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    8</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_growth">
+                                HUB tổ chức Ngày hội Việc làm Bền vững: Kết nối 50+ Ngân hàng và Doanh nghiệp Fintech
+                                lớn</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_growth">
+                                Tạo ra hàng ngàn cơ hội thực tập, việc làm tốt thúc đẩy tăng trưởng kinh tế bền vững
+                                theo chuẩn SDG 8 trực tiếp cho sinh viên HUB.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-8.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark" data-i18n="sdg_8_title">Tăng trưởng & Việc
+                                        làm</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 3 (SDG 16) -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="16" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20250716154746-1010517367436_781551094195040_7585641342687119877_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 16 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    26/01/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #00689D; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_institution">#Thể chế hoạt động hiệu quả</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> 6 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 3.1k <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #00689D; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    16</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_inst">
+                                Ứng dụng chuyển đổi số toàn diện trong quản trị Đại học tại HUB: Hướng tới minh bạch tài
+                                chính và học vụ</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_inst">
+                                Giảm thiểu thủ tục giấy tờ, tăng cường công lý và sự công bằng trong mọi hoạt động của
+                                giảng viên và sinh viên đúng với định hướng SDG 16 của HUB.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-16.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark" data-i18n="sdg_16_title">Thể chế vững mạnh</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 4 (SDG 17) -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="17" data-year="2025">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20240805091642-1010san-da-bong.jpg" class="w-100 h-100"
+                                style="object-fit: cover; transition: transform 0.5s;" alt="SDG 17 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    15/01/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #19486A; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_partnership">#Hợp tác đối tác</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> 4 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 1.8k <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #19486A; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    17</span>
+                            </div>
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_part">
+                                Lễ ký kết biên bản ghi nhớ (MoU) giữa HUB và mạng lưới Đại học Châu Á về phát triển tín
+                                dụng carbon</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_part">
+                                Thúc đẩy trực tiếp SDG 17 qua việc bắt tay quốc tế tạo nên sức mạnh tổng hợp giải quyết
+                                các bài toán toàn cầu về môi trường và kinh tế.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-17.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark" data-i18n="sdg_17_title">Quan hệ đối tác</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock News 2025 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="13" data-year="2025">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20241231170332vehub.jpg" class="w-100 h-100"
+                                style="object-fit: cover; transition: transform 0.5s;" alt="SDG 13 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    15/10/2025</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #3F7E44; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_action">#Hành động Khí hậu</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_title_mock_13">Chiến dịch Giờ Trái Đất 2025 tại HUB:
+                                Tiết kiệm năng lượng bền vững</h5>
+                            <p class="card-text text-muted mb-4" style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_text_mock_13">Sinh viên HUB chung tay lan tỏa thông điệp tiết kiệm
+                                năng lượng, bảo vệ môi trường hướng tới phát triển bền vững.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock News 2024 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="11" data-year="2024">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20250716155218-1010518319644_784114710605345_7666658207170697218_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 11 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080;">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1"></i> 20/05/2024</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #FD9D24; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_community">#Cộng đồng Bền vững</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_title_mock_11">Dự án Thư viện xanh và Khu vực tự học
+                                ngoài trời cho sinh viên HUB</h5>
+                            <p class="card-text text-muted mb-4" style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_text_mock_11">Cải tạo và xây dựng môi trường tự học, sinh hoạt mở
+                                thân thiện, giúp kết nối sinh viên tốt hơn.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mock News 2023 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="5" data-year="2023">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/20250617092257-1010gen-h-z6710959577030_617c36dbe71a97a5b06018d5fc08017f.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 5 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080;">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1"></i> 08/03/2023</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #FF3A21; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_gender">#Bình đẳng Giới</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <h5 class="card-title fw-bold mb-3 lh-base text-dark" style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_title_mock_5">Tọa đàm Gương mặt Nữ Sinh viên Khởi
+                                nghiệp Tiêu biểu 2023</h5>
+                            <p class="card-text text-muted mb-4" style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;" data-i18n="news_text_mock_5">Khuyến khích và tôn vinh phong trào khởi nghiệp, đổi
+                                mới sáng tạo trong cộng đồng nữ sinh viên khối ngành Kinh tế.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 3 (SDG 9) 2026 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="9" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/532344809_1166294102195892_1267097359075840955_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 9 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    15/03/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #FD6925; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_industry">#Công nghiệp & Đổi mới</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> 4 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 1.2k <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #FD6925; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    9</span>
+                            </div>
+                                <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_ai">
+                                Tọa đàm 2026: Nghiên cứu sinh viên về Ứng dụng AI trong Ngân hàng Bền vững</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_ai">
+                                Phát triển các giải pháp sáng tạo nhằm thúc đẩy hạ tầng công nghệ ngân hàng hiện đại tại
+                                Việt Nam.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-9.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark">Công nghiệp, Đổi
+                                        mới</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 4 (SDG 10) 2026 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="10" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/533557671_1168579308634038_7551131979271141259_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 10 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    25/03/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #DD1367; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;" data-i18n="news_tag_finance">#Bất bình đẳng</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> 3 <span data-i18n="news_minutes">phút</span> <span data-i18n="news_read">đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 850 <span data-i18n="news_views">lượt xem</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #DD1367; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    10</span>
+                            </div>
+                                <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_scholarship">
+                                HUB trao Học bổng Hỗ trợ sinh viên từ các Tỉnh thành xa xôi năm 2026</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_scholarship">
+                                Đóng góp vào bình đẳng khả năng tiếp cận giáo dục bằng các quỹ học bổng và tín dụng
+                                giáo dục với lãi suất ưu đãi.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-10.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark">Giảm Bất bình
+                                        đẳng</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- News Item 5 (SDG 11) 2026 -->
+                <div class="col-lg-4 col-md-6 news-card-item" data-sdg="11" data-year="2026">
+                    <div class="card h-100 border-0 shadow-sm rounded-4 overflow-hidden d-flex flex-column"
+                        style="transition: all 0.3s ease; cursor: pointer;"
+                        onclick="window.location.href='news_detail.html'"
+                        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 12px 24px rgba(0,0,0,0.1)'"
+                        onmouseout="this.style.transform='none'; this.style.boxShadow='0 0.125rem 0.25rem rgba(0,0,0,0.075)'">
+                        <div class="position-relative overflow-hidden" style="height: 240px;">
+                            <img src="images/588918054_1254246843400617_4517237179327917961_n.jpg"
+                                class="w-100 h-100" style="object-fit: cover; transition: transform 0.5s;"
+                                alt="SDG 11 News">
+                            <div class="position-absolute bg-white px-3 py-1 rounded-pill shadow-sm"
+                                style="top: 15px; right: 15px; color: #004080; border: 1px solid rgba(0,0,0,0.05);">
+                                <small class="fw-bold"><i class="far fa-calendar-alt me-1" style="color: #004080;"></i>
+                                    10/04/2026</small>
+                            </div>
+                            <div class="position-absolute text-white px-3 py-2"
+                                style="bottom: 0px; left: 0px; background: #FD9D24; border-top-right-radius: 4px;">
+                                <span class="fw-bold" style="font-size: 0.95rem;">#Thành phố Bền vững</span>
+                            </div>
+                        </div>
+                        <div class="card-body bg-white p-4 d-flex flex-column">
+                            <div class="d-flex align-items-center justify-content-between mb-3 text-muted"
+                                style="font-size: 0.85rem; font-weight: 400;">
+                                <div class="d-flex gap-3">
+                                    <span><i class="far fa-clock me-1" style="color: #F2A900;"></i> <span data-i18n="news_read_time">6 phút đọc</span></span>
+                                    <span><i class="far fa-eye me-1" style="color: #00BFFF;"></i> 3.1k <span data-i18n="news_views">views</span></span>
+                                </div>
+                                <span class="badge text-white px-2 py-1"
+                                    style="background-color: #FD9D24; font-size: 0.65rem; border-radius: 4px;">SDG
+                                    11</span>
+                            </div>
+                                <h5 class="card-title fw-bold mb-3 lh-base text-dark"
+                                style="display: -webkit-box; -webkit-line-clamp: 3; line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; font-size: 1.15rem;" data-i18n="news_title_transport">
+                                Khởi động Dự án Giao thông Thông minh quanh Cơ sở HUB 2026</h5>
+                            <p class="card-text text-muted mb-4"
+                                style="display: -webkit-box; -webkit-line-clamp: 2; line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: 0.9rem;" data-i18n="news_text_transport">
+                                Cải tạo hạ tầng giao thông và bãi giữ xe thông minh, giảm khí thải và ách tắc tại khu
+                                vực
+                                trung tâm.</p>
+                            <div class="mt-auto d-flex justify-content-between align-items-center text-muted"
+                                style="border-top: 1px solid #f0f0f0; padding-top: 15px;">
+                                <span
+                                    class="badge bg-light text-secondary rounded-pill pe-3 p-1 border d-flex align-items-center"
+                                    style="background-color: #f8f9fa !important; border-color: #e9ecef !important;">
+                                    <img src="images/sdg-11.png" width="35" height="35" class="me-2 rounded"
+                                        style="object-fit: contain;">
+                                    <span style="font-size: 0.85rem;" class="fw-bold text-dark">Thành phố Bền
+                                        vững</span>
+                                </span>
+                                <span
+                                    style="color: #F2A900; border: 1px solid #F2A900; border-radius: 50%; width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; transition: all 0.2s;"><i
+                                        class="fas fa-arrow-right"></i></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pagination Mockup -->
+            <div class="d-flex justify-content-center mt-5">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination pagination-sm" id="news-pagination">
+                        <!-- Rendered by JS -->
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <!-- Activity Gallery Section -->
+    <section id="activities" class="py-5 bg-white">
+        <div class="container">
+            <div class="text-center mb-5">
+                <span class="text-hub-gold fw-bold" data-i18n="act_label">HOẠT ĐỘNG THỰC TIỄN</span>
+                <h2 class="text-hub-blue fw-bold" data-i18n="act_title">Hình ảnh hoạt động tại HUB</h2>
+            </div>
+            <div class="row g-3">
+                <!-- Row 1 -->
+                <div class="col-md-4 col-sm-6">
+                    <img src="images/20240805091642-1010san-da-bong.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 1">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="images/20250716154746-1010517367436_781551094195040_7585641342687119877_n.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 2">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <img src="images/533557671_1168579308634038_7551131979271141259_n.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 3">
+                </div>
+
+                <!-- Row 2 -->
+                <div class="col-md-4 col-sm-6">
+                    <img src="images/589109566_1253354360156532_8115778124660320115_n.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 4">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="images/532344809_1166294102195892_1267097359075840955_n.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 5">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <img src="images/588918054_1254246843400617_4517237179327917961_n.jpg"
+                        class="img-fluid rounded shadow-sm hover-zoom w-100" style="height: 250px; object-fit: cover;"
+                        alt="Activity 6">
+                </div>
+            </div>
+    </section>
+
+    <!-- Footer Section -->
+    <!-- Footer Section -->
+    <footer class="footer-modern">
+        <div class="container">
+            <div class="row">
+                <!-- Brand & Official Info -->
+                <div class="col-lg-4 mb-0" style="margin-left: -15px;">
+                    <img src="images/HUB logo-08.png" alt="HUB Logo" class="footer-logo-white">
+                    <h5 class="mb-3" data-i18n="footer_brand">TRƯỜNG ĐẠI HỌC NGÂN HÀNG<br>THÀNH PHỐ HỒ CHÍ MINH</h5>
+                    <div class="" style="margin-left: 60px; margin-top: -20px;">
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i></strong> <span data-i18n="footer_hq">Trụ sở chính: 36 Tôn Thất Đạm, Q.1, TP.HCM</span></small></p>
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i></strong> <span data-i18n="footer_ham_nghi">Hàm Nghi: 39 Hàm Nghi, Q.1, TP.HCM</span></small></p>
+                        <p class="mb-1"><small><strong><i class="fas fa-map-marker-alt me-1 text-warning"></i></strong> <span data-i18n="footer_hoang_dieu">Hoàng Diệu: 56 Hoàng Diệu 2, TP. Thủ Đức</span></small></p>
+                        <p class="mb-1 mt-2"><small><i class="fas fa-phone me-1 text-white-50"></i> (028) 38 291 901
+                                &nbsp;|&nbsp; <i class="fas fa-envelope me-1 text-white-50"></i>
+                                dhnhtphcm@hub.edu.vn</small></p>
+                    </div>
+                </div>
+
+                <!-- Learners -->
+                <div class="col-lg-2 col-md-6 mb-0">
+                    <h5 data-i18n="footer_learners">NGƯỜI HỌC</h5>
+                    <a href="https://online.hub.edu.vn/" data-i18n="footer_edu_portal">Cổng đào tạo</a>
+                    <a href="#" data-i18n="footer_e_student">E-Student</a>
+                    <a href="#" data-i18n="footer_online_edu">Học trực tuyến</a>
+                    <a href="#" data-i18n="footer_digital_lib">Thư viện số</a>
+                </div>
+
+                <!-- Staff & Alumni -->
+                <div class="col-lg-3 col-md-6 mb-0">
+                    <h5 data-i18n="footer_staff_alumni">CBNV & CỰU SV</h5>
+                    <a href="#" data-i18n="footer_eoffice">Hệ thống EOffice</a>
+                    <a href="#" data-i18n="footer_hrm">Hệ thống HRM</a>
+                    <a href="#" data-i18n="footer_alumni">HUB Alumni</a>
+                    <a href="#" data-i18n="footer_recruitment">Tuyển dụng</a>
+                </div>
+
+                <!-- Connect -->
+                <div class="col-lg-3 col-md-6 mb-0">
+                    <h5 data-i18n="footer_connect">KẾT NỐI</h5>
+                    <div class="social-icons mb-1">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                    <h5 class="footer-link-raise-desktop" data-i18n="footer_external_links">LIÊN KẾT NGOÀI</h5>
+                    <a href="#" data-i18n="footer_moet">Bộ Giáo dục & Đào tạo</a>
+                    <a href="#" data-i18n="footer_sbv">Ngân hàng Nhà nước</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-modern">
+                <div class="row">
+                    <div class="col-12">
+                        <p class="mb-0">Designed by ©vanhtc@hub.edu.vn</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- About HUB Modal -->
+    <div class="modal fade" id="aboutHubModal" tabindex="-1" aria-labelledby="aboutHubModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content border-0 bg-transparent">
+                <div class="modal-body p-0 rounded-4 overflow-hidden position-relative shadow-lg"
+                    style="background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(20px);">
+
+                    <!-- Close Button -->
+                    <button type="button" class="btn-close position-absolute top-0 end-0 m-4 z-3"
+                        data-bs-dismiss="modal" aria-label="Close"
+                        style="background-color: white; padding: 0.8rem; border-radius: 50%; box-shadow: 0 4px 10px rgba(0,0,0,0.1);"></button>
+
+                    <div class="row g-0">
+                        <!-- Left Side: Image & Master Info -->
+                        <div class="col-lg-5 position-relative d-none d-lg-flex flex-column align-items-center justify-content-center text-white"
+                            style="min-height: 500px; padding: 2.5rem 2rem; background: linear-gradient(145deg, var(--hub-blue) 30%, rgba(20, 35, 75, 0.95) 75%, rgba(60, 45, 15, 0.8) 100%);">
+
+                            <!-- The Tree Logo -->
+                            <div class="d-flex align-items-center justify-content-center w-100 mb-3">
+                                <div class="bg-white rounded-4 shadow p-2 d-flex align-items-center justify-content-center overflow-hidden"
+                                    style="width: 210px; height: 210px;">
+                                    <img src="images/hub-tree-logo.png" alt="HUB Logo" class="object-fit-contain"
+                                        style="width: 100%; max-height: 100%; transform: scale(1.15); transition: transform 0.3s ease;">
+                                </div>
+                            </div>
+
+                            <!-- Information Block -->
+                            <div class="w-100 d-flex flex-column text-center mb-3">
+                                <h2 class="mb-2"
+                                    style="font-size: 1.7rem; letter-spacing: 0.5px; text-shadow: 2px 2px 4px rgba(0,0,0,0.6); color: #F2A900; font-weight: 800; line-height: 1.2;"
+                                    data-i18n="master_info_title">
+                                    ĐẠI HỌC NGÂN HÀNG<br>TP.HCM</h2>
+                                <hr class="border-2 w-25 mx-auto mb-2 mt-2" style="border-color: #F2A900; opacity: 1;">
+                            </div>
+
+                            <!-- Bottom List Block -->
+                            <div class="w-100 text-start px-2">
+                                <p class="mb-3"
+                                    style="font-size: 1rem; line-height: 1.5; color: rgba(255,255,255,0.9); font-weight: 300;"
+                                    data-i18n="master_info_desc">
+                                    Hoạt động và phát triển là hệ thống hơn 11 hecta được đầu tư xây dựng khang trang –
+                                    hiện đại theo chiến lược Xanh – Hiện đại – Bề thế.
+                                </p>
+                                <ul class="list-unstyled d-flex flex-column gap-2 mb-0"
+                                    style="font-size: 0.95rem; font-weight: 400;">
+                                    <li><i class="fas fa-star me-2" style="color: #F2A900;"></i> <span data-i18n="stat_aun_qa">Top 11 Đại học đạt chuẩn quốc tế AUN-QA cấp CSGD</span></li>
+                                    <li><i class="fas fa-star me-2" style="color: #F2A900;"></i> <span data-i18n="stat_iso">Hệ thống quản lý chất lượng ISO 9001:2015</span></li>
+                                    <li><i class="fas fa-star me-2" style="color: #F2A900;"></i> <span data-i18n="stat_global_citizen">Định hướng “đào tạo công dân chuẩn toàn cầu”</span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right Side: Interaction Content -->
+                        <div class="col-lg-7 p-4 p-md-5 d-flex flex-column justify-content-center bg-white">
+                            <h3 class="fw-bold mb-4 text-hub-blue" data-i18n="about_hub_title">TỔNG QUAN VỀ HUB</h3>
+
+                            <!-- Custom Tabs -->
+                            <ul class="nav nav-pills custom-modal-tabs mb-4 gap-2 flex-nowrap hide-scrollbar pb-2"
+                                id="aboutHubTabs" role="tablist"
+                                style="overflow-x: auto; overflow-y: hidden; border-bottom: 2px solid #eaeaea;">
+                                <li class="nav-item flex-fill text-center" role="presentation">
+                                    <button class="nav-link w-100 active rounded-pill px-3 text-nowrap fw-semibold"
+                                        id="vision-tab" data-bs-toggle="tab" data-bs-target="#vision-content"
+                                        type="button" role="tab" aria-controls="vision-content" aria-selected="true"
+                                        style="font-size: 0.95rem;" data-i18n="tab_vision_mission">Tầm nhìn & Sứ mệnh</button>
+                                </li>
+                                <li class="nav-item flex-fill text-center" role="presentation">
+                                    <button
+                                        class="nav-link w-100 rounded-pill px-3 text-nowrap text-secondary fw-semibold"
+                                        id="values-tab" data-bs-toggle="tab" data-bs-target="#values-content"
+                                        type="button" role="tab" aria-controls="values-content" aria-selected="false"
+                                        style="font-size: 0.95rem;" data-i18n="tab_core_values">Giá trị cốt lõi</button>
+                                </li>
+                                <li class="nav-item flex-fill text-center" role="presentation">
+                                    <button
+                                        class="nav-link w-100 rounded-pill px-3 text-nowrap text-secondary fw-semibold"
+                                        id="philosophy-tab" data-bs-toggle="tab" data-bs-target="#philosophy-content"
+                                        type="button" role="tab" aria-controls="philosophy-content"
+                                        aria-selected="false" style="font-size: 0.95rem;" data-i18n="tab_philosophy">Triết lý giáo dục</button>
+                                </li>
+                            </ul>
+
+                            <!-- Tab Content Area -->
+                            <div class="tab-content flex-grow-1 p-2" id="aboutHubTabsContent"
+                                style="min-height: 480px;">
+                                <div class="tab-pane fade show active" id="vision-content" role="tabpanel"
+                                    aria-labelledby="vision-tab" tabindex="0">
+                                    <div class="mb-4 p-4 rounded-4 bg-light shadow-sm border-start border-4"
+                                        style="border-color: var(--hub-blue) !important;">
+                                        <h4 class="text-hub-blue fw-bold mb-3 d-flex align-items-center"><i
+                                                class="fas fa-eye me-3 text-warning"></i> <span data-i18n="modal_vision_title">Tầm nhìn</span></h4>
+                                        <p class="mb-0 text-secondary" data-i18n="modal_vision_text">
+                                            HUB định hướng trở thành đại học đa ngành và liên ngành nằm trong nhóm các
+                                            đại học có uy tín ở khu vực Đông Nam Á. HUB tiên phong ứng dụng công nghệ số
+                                            trong đào tạo, nghiên cứu và giải quyết các vấn đề liên ngành.
+                                        </p>
+                                    </div>
+                                    <div class="p-4 rounded-4 bg-light shadow-sm border-start border-4"
+                                        style="border-color: var(--hub-red) !important;">
+                                        <h4 class="text-hub-red fw-bold mb-3 d-flex align-items-center"><i
+                                                class="fas fa-bullseye me-3 text-warning"></i> <span data-i18n="modal_mission_title">Sứ mệnh</span></h4>
+                                        <p class="mb-0 text-secondary" data-i18n="modal_mission_text">
+                                            HUB cung cấp cho xã hội và ngành ngân hàng nguồn nhân lực chất lượng cao,
+                                            các nghiên cứu có tầm ảnh hưởng, cùng với dịch vụ tư vấn và hoạt động phục
+                                            vụ cộng đồng. HUB kiến tạo hệ sinh thái giáo dục, mang đến cơ hội học tập
+                                            suốt đời, phát triển con người toàn diện, sáng tạo, với tinh thần phụng sự.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 2: Core Values -->
+                                <div class="tab-pane fade" id="values-content" role="tabpanel"
+                                    aria-labelledby="values-tab" tabindex="0">
+                                    <div class="row g-4 h-100">
+                                        <div class="col-md-4">
+                                            <div class="h-100 p-4 rounded-4 text-center border custom-value-card transition-all"
+                                                style="background: linear-gradient(180deg, #fff 0%, #f4f9ff 100%);">
+                                                <div class="icon-circle mx-auto mb-3 bg-white shadow-sm d-flex align-items-center justify-content-center"
+                                                    style="width: 60px; height: 60px; border-radius: 50%; color: var(--hub-blue);">
+                                                    <i class="fas fa-balance-scale fs-4"></i>
+                                                </div>
+                                                <h5 class="fw-bold text-hub-blue" data-i18n="value_integrity_title">CHÍNH TRỰC</h5>
+                                                <p class="small text-muted mb-0" data-i18n="value_integrity_text">Nhất quán giữa Tư duy - Lời nói - Hành
+                                                    động.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="h-100 p-4 rounded-4 text-center border custom-value-card transition-all"
+                                                style="background: linear-gradient(180deg, #fff 0%, #fff0f0 100%);">
+                                                <div class="icon-circle mx-auto mb-3 bg-white shadow-sm d-flex align-items-center justify-content-center"
+                                                    style="width: 60px; height: 60px; border-radius: 50%; color: var(--hub-red);">
+                                                    <i class="fas fa-users fs-4"></i>
+                                                </div>
+                                                <h5 class="fw-bold text-hub-red" data-i18n="value_solidarity_title">ĐOÀN KẾT</h5>
+                                                <p class="small text-muted mb-0" data-i18n="value_solidarity_text">Hài hòa lợi ích giữa các bên liên quan
+                                                    để cùng phát triển.</p>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="h-100 p-4 rounded-4 text-center border custom-value-card transition-all"
+                                                style="background: linear-gradient(180deg, #fff 0%, #fff9ec 100%);">
+                                                <div class="icon-circle mx-auto mb-3 bg-white shadow-sm d-flex align-items-center justify-content-center"
+                                                    style="width: 60px; height: 60px; border-radius: 50%; color: #F2A900;">
+                                                    <i class="fas fa-rocket fs-4"></i>
+                                                </div>
+                                                <h5 class="fw-bold" style="color: #d49500;" data-i18n="value_pioneering_title">TIÊN PHONG</h5>
+                                                <p class="small text-muted mb-0" data-i18n="value_pioneering_text">Dẫn dắt xu hướng trong ứng dụng khoa
+                                                    học kỹ thuật số.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Tab 3: Educational Philosophy -->
+                                <div class="tab-pane fade" id="philosophy-content" role="tabpanel"
+                                    aria-labelledby="philosophy-tab" tabindex="0">
+                                    <div class="d-flex flex-column gap-3">
+                                        <div class="d-flex align-items-center p-3 rounded-4 border bg-light">
+                                            <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-white shadow-sm"
+                                                style="width: 50px; height: 50px; border-radius: 50%;">
+                                                <i class="fas fa-door-open fs-5 text-hub-blue"></i>
+                                            </div>
+                                            <div class="ms-4">
+                                                <h5 class="fw-bold mb-1" data-i18n="phil_lib_title">Khai phóng</h5>
+                                                <p class="mb-0 text-muted small" data-i18n="phil_lib_text">Tự khai phá tiềm năng, lĩnh hội kiến
+                                                    thức trên nền tảng toàn diện, định hình giá trị tích cực để trở
+                                                    thành công dân sáng tạo, tự chủ.</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="d-flex align-items-center p-3 rounded-4 border bg-light">
+                                            <div class="flex-shrink-0 d-flex align-items-center justify-content-center bg-white shadow-sm"
+                                                style="width: 50px; height: 50px; border-radius: 50%;">
+                                                <i class="fas fa-network-wired fs-5 text-hub-red"></i>
+                                            </div>
+                                            <div class="ms-4">
+                                                <h5 class="fw-bold mb-1" data-i18n="phil_exp_title">Trải nghiệm</h5>
+                                                <p class="mb-0 text-muted small" data-i18n="phil_exp_text">Học thông qua trải nghiệm thực tế, gắn kết lý luận với thực tiễn, giúp sinh viên phát triển kỹ năng và bản lĩnh nghề nghiệp.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /About HUB Modal -->
+
+
+    <!-- CSS for Strategy Details Modal -->
+    <style id="strategy-details-styles">
+        /* Modal Background */
+        #strategyDetailModal .modal-content {
+            background: rgba(23, 44, 75, 0.95);
+            /* Deep dark blue background */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #fff;
+        }
+
+        /* Top Bar */
+        .strategy-top-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .strategy-top-bar .btn-close-custom {
+            background-color: #C5192D;
+            /* Red close button */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            opacity: 0.8;
+            transition: 0.3s;
+        }
+
+        .strategy-top-bar .btn-close-custom:hover {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        /* Strategy Tabs */
+        .strategy-tabs {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .strategy-tab-btn {
+            background: transparent;
+            border: none;
+            color: rgba(255, 255, 255, 0.5);
+            padding: 5px 15px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .strategy-tab-btn:hover {
+            color: #fff;
+        }
+
+        .strategy-tab-btn.active {
+            color: #fff;
+            border-bottom: 2px solid #0099cc;
+        }
+
+        /* Main Content Left */
+        .strategy-title {
+            font-size: 2.5rem;
+            font-weight: 900;
+            background: linear-gradient(90deg, #ffffff, #a3d8f4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 4px 15px rgba(0, 153, 204, 0.2);
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            line-height: 1.2;
+        }
+
+        .strategy-underline {
+            width: 80px;
+            height: 4px;
+            background-color: #C5192D;
+            /* HUB Red */
+            margin-bottom: 30px;
+        }
+
+        .strategy-list {
+            list-style: none;
+            padding: 0;
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.6;
+        }
+
+        .strategy-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .strategy-list .icon-box {
+            min-width: 28px;
+            height: 28px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            margin-top: 3px;
+            border: 1px solid rgba(92, 214, 92, 0.3);
+        }
+
+        .strategy-list .icon-box i {
+            color: #5cd65c;
+            /* Green check */
+            font-size: 0.9rem;
+        }
+
+        /* Glassmorphism Panel Right */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: inset 0 0 20px rgba(255, 255, 255, 0.02);
+            position: relative;
+        }
+
+        .kpi-number {
+            font-size: 5rem;
+            font-weight: 900;
+            color: #fff;
+            line-height: 1;
+            margin-bottom: 5px;
+            text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        .radar-chart-container {
+            height: 250px;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        /* Roadmap Timeline */
+        .roadmap-container {
+            margin-top: auto;
+            padding: 20px 40px 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .roadmap-track {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .roadmap-line {
+            position: absolute;
+            top: 8px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #C5192D, #F2A900, #0099cc, #5cd65c);
+            opacity: 0.8;
+            z-index: 1;
+        }
+
+        .roadmap-milestone {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .milestone-dot {
+            width: 16px;
+            height: 16px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            margin-bottom: 10px;
+            transition: 0.3s;
+        }
+
+        .roadmap-milestone.past .milestone-dot {
+            background-color: #0099cc;
+            /* HUB Blue / Active */
+            box-shadow: 0 0 10px #0099cc;
+        }
+
+        .roadmap-milestone.future .milestone-dot {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        .milestone-year {
+            font-weight: bold;
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        .milestone-label {
+            font-size: 0.85rem;
+            color: rgba(255, 255, 255, 0.4);
+            margin-top: 2px;
+        }
+
+        .roadmap-milestone.past .milestone-year,
+        .roadmap-milestone.past .milestone-label {
+            color: #fff;
+        }
+    </style>
+
+    <!-- Full Screen Strategy Modal V4 (With i18n & Enlarged Logo) -->
+    <div class="modal fade" id="strategyDetailModal" tabindex="-1" aria-labelledby="strategyDetailLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+
+                <!-- Top Bar -->
+                <div class="strategy-top-bar">
+                    <div class="d-flex align-items-center"
+                        style="background: rgba(255,255,255,0.9); padding: 5px 20px; border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.2);">
+                        <img src="images/HUB logo-08.png" height="70" alt="HUB Bền Vững">
+                    </div>
+
+                    <div class="strategy-tabs" id="strategyTabList">
+                        <button class="strategy-tab-btn" data-target="str-gov">
+                            <i class="fas fa-landmark"></i> Smart Gov
+                        </button>
+                        <button class="strategy-tab-btn active" data-target="str-edu">
+                            <i class="fas fa-graduation-cap"></i> Green Edu
+                        </button>
+                        <button class="strategy-tab-btn" data-target="str-res">
+                            <i class="fas fa-microscope"></i> Impact Research
+                        </button>
+                        <button class="strategy-tab-btn" data-target="str-cam">
+                            <i class="fas fa-tree"></i> Eco-Campus
+                        </button>
+                        <button class="strategy-tab-btn" data-target="str-com">
+                            <i class="fas fa-hands-helping"></i> Community
+                        </button>
+                    </div>
+
+                    <button type="button" class="btn-close-custom" data-bs-dismiss="modal" aria-label="Close">
+                        <i class="fas fa-times fs-5"></i>
+                    </button>
+                </div>
+
+                <div class="modal-body d-flex flex-column p-0">
+                    <!-- Tab Contents -->
+                    <div class="container-fluid flex-grow-1 position-relative d-flex align-items-center"
+                        id="strategyContents">
+
+                        <!-- Content: Smart Gov -->
+                        <div class="strategy-pane fade w-100" id="str-gov" style="display:none;">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-lg-5 px-lg-5">
+                                    <h1 class="strategy-title" data-i18n="str_gov_title">QUẢN TRỊ ĐẠI HỌC MINH BẠCH & SỐ
+                                        HÓA</h1>
+                                    <div class="strategy-underline"></div>
+                                    <ul class="strategy-list">
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_gov_l1">Hệ thống E-Office: 100% quy trình trình ký được
+                                                số hóa toàn diện.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_gov_l2">Cổng thông tin sinh viên: Tích hợp dịch vụ &
+                                                thanh toán học phí trực tuyến xanh.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_gov_l3">Minh bạch số liệu: Hệ thống Dashboard báo cáo
+                                                thời gian thực cho Ban Giám hiệu.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 p-4">
+                                    <div class="glass-panel text-center">
+                                        <h5 class="text-uppercase text-white-50 mb-2" data-i18n="str_gov_kpi_title">Hài
+                                            lòng dịch vụ số</h5>
+                                        <div>
+                                            <span class="kpi-number counter-value" data-target="95">0</span>
+                                            <span class="fs-1 fw-bold text-white">%</span>
+                                        </div>
+                                        <p class="mt-1 text-light mb-4" data-i18n="str_gov_kpi_desc">Sự hài lòng của
+                                            người học về dịch vụ trực tuyến.</p>
+                                        <img src="images/533557671_1168579308634038_7551131979271141259_n.jpg"
+                                            class="img-fluid rounded-4 shadow mt-4"
+                                            style="height: 250px; width:100%; object-fit: cover;" alt="Smart Gov data">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content: Green Edu -->
+                        <div class="strategy-pane fade show active w-100" id="str-edu">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-lg-5 px-lg-5">
+                                    <h1 class="strategy-title" data-i18n="str_edu_title">TIÊN PHONG ĐÀO TẠO TÀI CHÍNH -
+                                        NGÂN HÀNG XANH</h1>
+                                    <div class="strategy-underline"></div>
+                                    <ul class="strategy-list">
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_edu_l1">Lồng ghép ESG & Phát triển bền vững vào 100%
+                                                chương trình đào tạo.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_edu_l2">Ra mắt trung tâm thực hành Fintech & Green
+                                                Finance đạt chuẩn quốc tế.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_edu_l3">Đào tạo thế hệ 'Công dân toàn cầu' có trách
+                                                nhiệm xã hội sâu sắc.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 p-4">
+                                    <div class="glass-panel text-center">
+                                        <h5 class="text-uppercase text-white-50 mb-2" data-i18n="str_edu_kpi_title">Tỷ
+                                            lệ Lồng ghép ESG</h5>
+                                        <div>
+                                            <span class="kpi-number counter-value" data-target="100">0</span>
+                                            <span class="fs-1 fw-bold text-white">%</span>
+                                        </div>
+                                        <p class="mt-1 text-light mb-4" data-i18n="str_edu_kpi_desc">Các chương trình
+                                            đào tạo đạt tiêu chuẩn tích hợp.</p>
+                                        <div id="radar-chart-edu" class="radar-chart-container"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content: Impact Research -->
+                        <div class="strategy-pane fade w-100" id="str-res" style="display:none;">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-lg-5 px-lg-5">
+                                    <h1 class="strategy-title" data-i18n="str_res_title">NGHIÊN CỨU LIÊN NGÀNH VÌ CỘNG
+                                        ĐỒNG</h1>
+                                    <div class="strategy-underline"></div>
+                                    <ul class="strategy-list">
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_res_l1">Tập trung nguồn lực khoa học công nghệ giải
+                                                quyết vấn đề xã hội.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_res_l2">Hợp tác với các tổ chức quốc tế thúc đẩy Tài
+                                                chính xanh toàn cầu.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_res_l3">Tăng cường chuyển giao công nghệ trực tiếp phục
+                                                vụ đời sống.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 p-4">
+                                    <div class="glass-panel text-center">
+                                        <h5 class="text-uppercase text-white-50 mb-2" data-i18n="str_res_kpi_title">Công
+                                            bố quốc tế</h5>
+                                        <div>
+                                            <span class="kpi-number counter-value" data-target="250">0</span>
+                                            <span class="fs-1 fw-bold text-white">+</span>
+                                        </div>
+                                        <p class="mt-1 text-light mb-4" data-i18n="str_res_kpi_desc">Bài báo khoa học
+                                            trong hệ thống ISI/SCOPUS hàng năm.</p>
+                                        <img src="images/589109566_1253354360156532_8115778124660320115_n.jpg"
+                                            class="img-fluid rounded-4 shadow mt-4"
+                                            style="height: 250px; width:100%; object-fit: cover;" alt="Impact Research">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content: Eco-Campus -->
+                        <div class="strategy-pane fade w-100" id="str-cam" style="display:none;">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-lg-5 px-lg-5">
+                                    <h1 class="strategy-title" data-i18n="str_cam_title">KHÔNG GIAN HỌC TẬP XANH & THÔNG
+                                        MINH</h1>
+                                    <div class="strategy-underline"></div>
+                                    <ul class="strategy-list">
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_cam_l1">Chuyển đổi công nghệ chiếu sáng thông minh tiết
+                                                kiệm năng lượng mặt trời.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_cam_l2">Hơn 11 hecta không gian xanh bao phủ làm giảm
+                                                khí thải carbon.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_cam_l3">Quản lý chất thải, hướng tới mục tiêu rác thải
+                                                bằng không (Zero waste).</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 p-4">
+                                    <div class="glass-panel text-center">
+                                        <h5 class="text-uppercase text-white-50 mb-2" data-i18n="str_cam_kpi_title">Diện
+                                            tích mảng xanh</h5>
+                                        <div>
+                                            <span class="kpi-number counter-value" data-target="11">0</span>
+                                            <span class="fs-1 fw-bold text-white">Ha</span>
+                                        </div>
+                                        <p class="mt-1 text-light mb-4" data-i18n="str_cam_kpi_desc">Không gian thân
+                                            thiện môi trường phục vụ sinh viên.</p>
+                                        <img src="images/532344809_1166294102195892_1267097359075840955_n.jpg"
+                                            class="img-fluid rounded-4 shadow mt-4"
+                                            style="height: 250px; width:100%; object-fit: cover;" alt="Eco-Campus">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content: Community -->
+                        <div class="strategy-pane fade w-100" id="str-com" style="display:none;">
+                            <div class="row w-100 justify-content-center align-items-center">
+                                <div class="col-lg-5 px-lg-5">
+                                    <h1 class="strategy-title" data-i18n="str_com_title">PHỤNG SỰ CỘNG ĐỒNG & TÀI CHÍNH
+                                        TOÀN DIỆN</h1>
+                                    <div class="strategy-underline"></div>
+                                    <ul class="strategy-list">
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_com_l1">Lan tỏa kiến thức tài chính qua các chuỗi hội
+                                                thảo chuyên đề miễn phí.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_com_l2">Hoạt động thiện nguyện Mùa Hè Xanh, Xuân Tình
+                                                Nguyện diễn ra định kỳ.</span>
+                                        </li>
+                                        <li>
+                                            <div class="icon-box"><i class="fas fa-check"></i></div>
+                                            <span data-i18n="str_com_l3">Trang bị kỹ năng kinh tế, khởi nghiệp cho thanh
+                                                niên khu vực lân cận.</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="col-lg-5 p-4">
+                                    <div class="glass-panel text-center">
+                                        <h5 class="text-uppercase text-white-50 mb-2" data-i18n="str_com_kpi_title">Dự
+                                            án cộng đồng</h5>
+                                        <div>
+                                            <span class="kpi-number counter-value" data-target="50">0</span>
+                                            <span class="fs-1 fw-bold text-white">+</span>
+                                        </div>
+                                        <p class="mt-1 text-light mb-4" data-i18n="str_com_kpi_desc">Chiến dịch giúp đỡ
+                                            người dân được thực hiện liên tục.</p>
+                                        <img src="images/588918054_1254246843400617_4517237179327917961_n.jpg"
+                                            class="img-fluid rounded-4 shadow mt-4"
+                                            style="height: 250px; width:100%; object-fit: cover;" alt="Community">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Animated Roadmap Timeline -->
+                    <div class="roadmap-container">
+                        <div class="roadmap-track">
+                            <div class="roadmap-line"></div>
+
+                            <div class="roadmap-milestone past">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-year">2024</div>
+                                <div class="milestone-label" data-i18n="str_rm_p1">Khởi động</div>
+                            </div>
+                            <div class="roadmap-milestone future">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-year">2026</div>
+                                <div class="milestone-label" data-i18n="str_rm_p2">Bứt phá</div>
+                            </div>
+                            <div class="roadmap-milestone future">
+                                <div class="milestone-dot"></div>
+                                <div class="milestone-year">2030</div>
+                                <div class="milestone-label" data-i18n="str_rm_p3">Dẫn đầu</div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Global Project Logic -->
+    <!-- <script src="js/script.js"></script> -->
+    <script src="js/dashboard.js"></script>
+
+    <!-- Page Specific Logic -->
+    
+
+    <!-- Dashboard JS -->
+    <script src="js/dashboard.js"></script>
+
+    <!-- Chatbot Widget -->
+    <div class="hubi-chatbot-widget" style="z-index: 2147483647; pointer-events: none;">
+        <div class="hubi-notification"></div>
+        <button id="hubiMascot" class="hubi-mascot" onclick="toggleHubiPopup(event)"
+            style="pointer-events: auto; position: relative; z-index: 2147483647; cursor: pointer;">
+            <img src="images/HUBI.jpg" alt="Hubi Mascot">
+        </button>
+
+        <div id="hubiPopup" class="hubi-popup" style="z-index: 2147483647;">
+            <div class="hubi-avatar-small">
+                <img src="images/HUBI.jpg" alt="Hubi Avatar">
+            </div>
+            <h4 class="hubi-title" data-i18n="hubi_greeting">HUBI xin chào!</h4>
+            <p class="hubi-message" data-i18n="hubi_message">
+                Hãy để lại thông tin cần hỗ trợ.<br>
+                HUBI sẵn lòng giải đáp.
+            </p>
+            <div class="hubi-actions">
+                <a href="#" class="hubi-btn messenger" onclick="event.stopPropagation()"><i
+                        class="fab fa-facebook-messenger"></i></a>
+                <a href="#" class="hubi-btn zalo" onclick="event.stopPropagation()" data-i18n="hubi_zalo">Zalo</a>
+            </div>
+        </div>
+    </div>
+
+    
+<script src="js/index.js"></script>
+</body>
+
+</html>
+
+
+
+

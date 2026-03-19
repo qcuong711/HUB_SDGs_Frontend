@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             <div class="flip-card flip-card-sm shadow-sm">
                                 <div class="flip-card-inner">
                                     <div class="flip-card-front">
-                                        <img src="images/sdg-${i}.png" class="w-100 h-100" style="object-fit: contain; padding: 0px;" alt="SDG ${i}">
+                                        <img src="images/sdg-icons/sdg-${i}.png" class="w-100 h-100" style="object-fit: contain; padding: 0px;" alt="SDG ${i}">
                                     </div>
                                     <div class="flip-card-back" style="background-color: ${sdgColor};">
                                         <div class="flip-sdg-title">SDG ${i}</div>

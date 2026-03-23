@@ -14,27 +14,29 @@ document.addEventListener('DOMContentLoaded', function () {
         '#3F7E44', '#0A97D9', '#56C02B', '#00689D', '#19486A'
     ];
 
-    // Mock Data Store
-    const hubData = {
-        // Research: [SDG Index, Year, Count] -> Heatmap
+    // Data Store (Sẽ được gán lại khi lấy data từ API)
+    let hubData = {
         research: [],
-        // Teaching: [SDG Index, % Courses]
         teaching: [],
-        // Stewardship: { energy, water, waste } per SDG (simplified)
         stewardship: [],
         progress: []
     };
 
-    // Generate Mock Data
-    for (let i = 0; i < 17; i++) {
-        // Research: Random 5-20 papers per SDG
-        hubData.research.push({ sdg: i + 1, count: Math.floor(Math.random() * 50) + 10 });
-
-        // Teaching: Random 1-10% courses
-        hubData.teaching.push({ sdg: i + 1, percentage: (Math.random() * 10).toFixed(1) });
-
-        // Stewardship: Random progress 20-100%
-        hubData.progress.push(Math.floor(Math.random() * 80) + 20);
+    // Hàm khởi tạo dữ liệu
+    async function initData() {
+        try {
+            // Có thể thêm logic hiện Spinner/Loading ở đây
+            
+            // Gọi hàm từ api.js (Đã tách logic fetch data ra riêng)
+            hubData = await APIService.getDashboardStats();
+            
+            // Sau khi có data thì mới render
+            updateDashboard(currentFilter);
+            
+            // Có thể thêm logic ẩn Spinner/Loading ở đây
+        } catch (error) {
+            console.error("Lỗi khởi tạo Dashboard:", error);
+        }
     }
 
     // --- 2. Filter Logic ---
@@ -308,8 +310,8 @@ document.addEventListener('DOMContentLoaded', function () {
         chartOutreach.setOption(option, true);
     }
 
-    // Initialize with All
-    updateDashboard('all');
+    // Initialize
+    initData(); // Gọi hàm initData bất đồng bộ thay vì updateDashboard('all') đồng bộ
 
     // Handle Resize
     window.addEventListener('resize', function () {

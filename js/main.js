@@ -10,7 +10,10 @@ let currentNewsPage = 1;
                             if (page < 1 || page > totalPages) return;
                             currentNewsPage = page;
                             renderPagination();
-                            document.getElementById('news-grid').scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            const newsGrid = document.getElementById('news-grid');
+                            if (newsGrid) {
+                                newsGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
                         }
 
                         function renderPagination() {
@@ -49,14 +52,17 @@ let currentNewsPage = 1;
                             });
 
                             let emptyMsg = document.getElementById('news-empty-msg');
-                            if (!emptyMsg) {
-                                emptyMsg = document.createElement('div');
-                                emptyMsg.id = 'news-empty-msg';
-                                emptyMsg.className = 'col-12 text-center text-muted py-5';
-                                emptyMsg.innerHTML = '<i class="fas fa-box-open fs-1 mb-3" style="color:#ddd;"></i><p>Chưa có bài viết nào phù hợp với bộ lọc.</p>';
-                                document.getElementById('news-grid').appendChild(emptyMsg);
+                            const newsGrid = document.getElementById('news-grid');
+                            if (newsGrid) {
+                                if (!emptyMsg) {
+                                    emptyMsg = document.createElement('div');
+                                    emptyMsg.id = 'news-empty-msg';
+                                    emptyMsg.className = 'col-12 text-center text-muted py-5';
+                                    emptyMsg.innerHTML = '<i class="fas fa-box-open fs-1 mb-3" style="color:#ddd;"></i><p>Chưa có bài viết nào phù hợp với bộ lọc.</p>';
+                                    newsGrid.appendChild(emptyMsg);
+                                }
+                                emptyMsg.style.display = visibleNewsCards.length === 0 ? 'block' : 'none';
                             }
-                            emptyMsg.style.display = visibleNewsCards.length === 0 ? 'block' : 'none';
                         }
 
                         function applyAllFilters() {

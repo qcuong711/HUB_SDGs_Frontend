@@ -455,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const link = document.createElement('a');
                     link.href = `sdg-${num}-detail.html`;
                     link.className = `sdg-icon-mini ${num === sdgNum ? 'active-sdg' : ''}`;
-                    link.innerHTML = `<img src="images/sdg-${imgNum}.png" alt="SDG ${imgNum}" style="width: 50px; height: 50px; border-radius: 4px; border: ${num === sdgNum ? '2px solid white' : 'none'}">`;
+                    link.innerHTML = `<img src="images/sdg-icons/sdg-${imgNum}.png" alt="SDG ${imgNum}" style="width: 50px; height: 50px; border-radius: 4px; border: ${num === sdgNum ? '2px solid white' : 'none'}">`;
                     grid.appendChild(link);
                 }
             }

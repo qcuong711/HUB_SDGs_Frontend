@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // 17 SDG Icons
         for (let i = 1; i <= 17; i++) {
-            const basePath = window.appImgPath || 'images/';
+            const basePath = window.appImgPath || 'images/sdg-icons/';
             filterHtml += `
             <div class="sdg-filter-item" data-sdg="${i}" title="SDG ${i}">
-                 <img src="${basePath}sdg-${i}.png" onerror="this.src='https://via.placeholder.com/60/ccc/333?text=${i}'" alt="SDG ${i}">
+                 <img src="${basePath}sdg-${i}.png" alt="SDG ${i}">
             </div>`;
         }
         filterContainer.innerHTML = filterHtml;

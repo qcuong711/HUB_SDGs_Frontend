@@ -200,7 +200,7 @@ h6 {
     /* Flexible height */
     padding: 8rem 0;
     /* consistent padding */
-    background-image: url('../images/campus.png');
+    background-image: url('../images/gallery/campus.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
